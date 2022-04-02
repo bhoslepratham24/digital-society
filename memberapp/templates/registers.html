@@ -1,0 +1,117 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CleanMe - Cleaning Company Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Cleaning Company Website Template" name="keywords">
+        <meta content="Cleaning Company Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="{% static 'img/favicon.ico'%}" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="wrapper">
+ 
+            
+            
+            <!-- Page Header Start -->
+            <div class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Register</h2>
+                        </div>
+                        <div class="col-12">
+                            <a href="">Home</a>
+                            <a href="">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header End -->
+
+
+            <!-- Contact Start -->
+            <div class="contact">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="faqs">
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                {% if msg %}
+                                <p style="color: red;margin: 5px; padding: 5px;">{{msg}}</p>
+                                {% endif %}
+                                <form action="{% url 'registers' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <input type="text" class="form-control" name="name" placeholder="Your Name" required="required" />
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input type="email" class="form-control" name="email" placeholder="Your Email" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name=mobile placeholder="Your mobile" required="required" />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="6" name=address placeholder="Your address" required="required" ></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name=password placeholder="Your password" required="required" />
+                                    </div>
+                                    
+                                    <div><button class="btn" type="submit">Register</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact End -->
+
+
+            
+            
+            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+
+
+            
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
+{% endblock %}
